@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import AppLayout from "../components/AppLayout";
 import { Form, Input, Checkbox, Button } from "antd";
 import "antd/dist/antd.css";
@@ -12,31 +12,31 @@ const Signup = () => {
   const [term, setTerm] = useState(false);
   const [termError, setTermError] = useState(false);
 
-  const onChangeId = (e) => {
+  const onChangeId = useCallback((e) => {
     setId(e.target.value);
-  };
-  const onChangeNick = (e) => {
+  }, []);
+  const onChangeNick = useCallback((e) => {
     setNick(e.target.value);
-  };
-  const onChangePassword = (e) => {
+  }, []);
+  const onChangePassword = useCallback((e) => {
     setPassword(e.target.value);
-  };
-  const onChangePasswordCheck = (e) => {
+  }, []);
+  const onChangePasswordCheck = useCallback((e) => {
     setPasswordError(false);
     setPasswordCheck(e.target.value);
-  };
-  const onChangeTerm = (e) => {
+  }, []);
+  const onChangeTerm = useCallback((e) => {
     setTermError(false);
     setTerm(e.target.checked);
-  };
-  const onFinish = () => {
+  }, []);
+  const onFinish = useCallback(() => {
     if (password !== passwordCheck) {
       return setPasswordError(true);
     }
     if (!term) {
       return setTermError(true);
     }
-  };
+  }, [password, passwordCheck]);
   const onFinishFailed = () => {
     alert("알 수 없는 에러가 발생했습니다.");
   };
