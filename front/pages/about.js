@@ -1,7 +1,7 @@
-import Link from "next/link";
+import "antd/dist/antd.css";
 
 const About = () => {
-  return <div>about!</div>;
+  return <div>abo!</div>;
 };
 
 export default About;

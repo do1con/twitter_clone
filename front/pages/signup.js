@@ -1,5 +1,4 @@
 import { useState, useCallback } from "react";
-import AppLayout from "../components/AppLayout";
 import { Form, Input, Checkbox, Button } from "antd";
 import "antd/dist/antd.css";
 
@@ -42,7 +41,7 @@ const Signup = () => {
   };
 
   return (
-    <AppLayout>
+    <>
       <Form
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -102,7 +101,7 @@ const Signup = () => {
           </Button>
         </div>
       </Form>
-    </AppLayout>
+    </>
   );
 };
 

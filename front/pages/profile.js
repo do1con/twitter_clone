@@ -1,11 +1,7 @@
-import AppLayout from "../components/AppLayout";
+import "antd/dist/antd.css";
 
 const Profile = () => {
-  return (
-    <AppLayout>
-      <div>프로필</div>
-    </AppLayout>
-  );
+  return <div>프로필</div>;
 };
 
 export default Profile;
